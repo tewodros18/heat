@@ -14,6 +14,7 @@ __all__ = ["DNDsparse_csr"]
 
 Communication = TypeVar("Communication")
 
+
 class DNDsparse_csr:
     def __init__(
         self,
@@ -32,6 +33,7 @@ class DNDsparse_csr:
         self.__device = device
         self.__comm = comm
         self.__balanced = balanced
+
 
 # HeAT imports at the end to break cyclic dependencies
 from . import complex_math
