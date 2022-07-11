@@ -16,16 +16,18 @@ __all__ = ["coo_matrix"]
 
 Communication = TypeVar("Communication")
 
+
 def indices(gshape, obj, split, comm) -> coo_matrix:
     start, _, _ = comm.chunk(gshape, split=split)
     t_indices = obj.coalesce().indices()
     t_indices[split] += start
     global_indices = ht.array(t_indices, is_split=1)
-    return global_indices   
+    return global_indices
 
-class coo_matrix():
+
+class coo_matrix:
     def __init__(
-        self, 
+        self,
         array: torch.sparse_coo_tensor,
         gshape: Tuple[int, ...],
         dtype: datatype,
@@ -43,16 +45,16 @@ class coo_matrix():
         self.__balanced = balanced
         self.__lnnz = array._nnz()
         self.__gnnz = gnnz
-        self.__indices = indices(gshape,array,split, comm)
-        #TODO: indices need to include explicit zeros       
-        # create 
-        # .coalesce() 
+        self.__indices = indices(gshape, array, split, comm)
+        # TODO: indices need to include explicit zeros
+        # create
+        # .coalesce()
         # self.__indices = array.nonzero(as_tuple=True)
         # print(self.__indices)
         # print("here")
         # self.__data = array[self.__indices]
         # print(self.__data)
-        self.has_canonical_format = True 
+        self.has_canonical_format = True
 
     @property
     def indices(self) -> coo_matrix:
@@ -71,7 +73,7 @@ class coo_matrix():
         Number of non-zero elemnent on the local process of the ``coo_array``
         """
         return self.__lnnz
-    
+
     @property
     def gshape(self) -> int:
         """
