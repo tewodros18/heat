@@ -69,3 +69,8 @@ Copy URL to plot repository and put in section two of explorer
   https://raw.githubusercontent.com/tewodros18/heat-data/main/plots
 ```
 ![step](https://raw.githubusercontent.com/tewodros18/rep/master/step2.PNG)
+
+Result
+
+![image](https://user-images.githubusercontent.com/58773098/230177888-f275351c-298d-4d28-a7d0-06f2613dc016.png)
+
