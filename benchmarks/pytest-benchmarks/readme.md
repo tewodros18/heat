@@ -46,3 +46,26 @@ python aggregate.py
 
 
 ```
+## Exploring results in GPE
+
+After the successful completion of the CI, generated results can be found in the public repository [Heat-data](https://github.com/tewodros18/heat-data)
+
+To visualize the data go to [Ginkgo Performance Explorer](https://ginkgo-project.github.io/gpe/)
+
+```bash
+  https://ginkgo-project.github.io/gpe/
+```
+
+Copy URL to data repository and put in section one of explorer and select benchmark file
+
+```bash
+  https://raw.githubusercontent.com/tewodros18/heat-data/main/data
+```
+![step](https://raw.githubusercontent.com/tewodros18/rep/master/step1.PNG)
+
+Copy URL to plot repository and put in section two of explorer
+
+```bash
+  https://raw.githubusercontent.com/tewodros18/heat-data/main/plots
+```
+![step](https://raw.githubusercontent.com/tewodros18/rep/master/step2.PNG)
